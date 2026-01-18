@@ -24,7 +24,7 @@ public class ChatService {
                         prompt,
                         OpenAiChatOptions.builder()
                                 .withModel("gpt-4o")
-                                .withTemperature(0.4F)
+                                .withTemperature(0.4)
                                 .build()
                 ));
         return response.getResult().getOutput().getContent();

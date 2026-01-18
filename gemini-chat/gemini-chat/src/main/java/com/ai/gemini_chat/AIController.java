@@ -1,6 +1,8 @@
 package com.ai.gemini_chat;
 
+//import lombok.AllArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,9 +19,10 @@ public class AIController {
     private final QnAService qnAService;
 
     @PostMapping("/ask")
-    public ResponseEntity<String> askQuestion(@RequestBody Map<String, String> payload){
+    public ResponseEntity<String> askQuestion(@RequestBody Map<String, String> payload) {
         String question = payload.get("question");
         String answer = qnAService.getAnswer(question);
         return ResponseEntity.ok(answer);
     }
 }
+
